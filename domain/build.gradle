@@ -1,4 +1,6 @@
 //Dependency versions managed in $rootDir/dependencies.lock
 dependencies {
-    
+
+	// Test dependencies
+    testCompile group: 'org.testng', name: 'testng'
 }
