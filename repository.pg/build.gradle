@@ -1,6 +1,7 @@
 //Dependency versions managed in $rootDir/dependencies.lock
 dependencies {
 	// Compile dependencies
+	compile project(':domain')
 	compile group: 'com.google.code.findbugs', name: 'jsr305'
 
 	// Test dependencies
