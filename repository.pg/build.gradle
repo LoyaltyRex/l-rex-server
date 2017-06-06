@@ -2,7 +2,19 @@
 dependencies {
 	// Compile dependencies
 	compile project(':domain')
+	
+	compile group: 'com.coronaide.lockdown', name: 'lockdown-core'
+	
 	compile group: 'com.google.code.findbugs', name: 'jsr305'
+	
+	compile group: 'javax.inject', name: 'javax.inject'
+	
+	compile group: 'org.apache.commons', name: 'commons-dbcp2'
+	
+	compile group: 'org.springframework', name: 'spring-context'
+	compile group: 'org.springframework', name: 'spring-jdbc'
+	
+	compile group: 'org.postgresql', name: 'postgresql'
 
 	// Test dependencies
     testCompile group: 'org.testng', name: 'testng'

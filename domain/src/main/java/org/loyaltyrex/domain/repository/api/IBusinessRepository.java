@@ -11,6 +11,7 @@
 package org.loyaltyrex.domain.repository.api;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import org.loyaltyrex.domain.model.Business;
 
@@ -30,6 +31,6 @@ public interface IBusinessRepository {
      * @return An Optional containing the Business requested, or Optional.empty() if none was found
      * @since 0.1.0
      */
-    Optional<Business> find(String id);
+    Optional<Business> find(UUID id);
 
 }

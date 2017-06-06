@@ -11,6 +11,7 @@
 package org.loyaltyrex.domain.model;
 
 import java.util.Objects;
+import java.util.UUID;
 
 /**
  * A domain-level representation of a business.
@@ -20,11 +21,11 @@ import java.util.Objects;
  */
 public class Business {
 
-	private String id;
+    private UUID id;
 	
 	private String name;
 	
-	public Business(String id, String name) {
+    public Business(UUID id, String name) {
 		this.id = Objects.requireNonNull(id);
 		this.name = Objects.requireNonNull(name);
 	}
@@ -33,7 +34,7 @@ public class Business {
 	 * @return The identifier used to uniquely address this business
 	 * @since 0.1.0
 	 */
-	public String getId() {
+    public UUID getId() {
 		return id;
 	}
 	
