@@ -2,11 +2,15 @@ language: java
 
 jdk:
   - oraclejdk8
-  
+
+before_install:
+  - pip install --user codecov
+
 after_success:
+  - codecov
   - ./gradlew buildBom
   - bash <(curl -s https://copilot.blackducksoftware.com/bash/travis) ./build/blackduck/*_bdio.jsonld
-  
+
 notifications:
   email:
     recipients:
