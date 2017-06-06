@@ -1,5 +1,6 @@
 # l-rex-server
-[![Build Status](https://travis-ci.org/LoyaltyRex/l-rex-server.svg?branch=master)](https://travis-ci.org/LoyaltyRex/l-rex-server) [![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/groups/LoyaltyRex/locations/l-rex-server/public/results/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/groups/LoyaltyRex/locations/l-rex-server/public/results/branches/master)
+[![Build Status](https://travis-ci.org/LoyaltyRex/l-rex-server.svg?branch=master)](https://travis-ci.org/LoyaltyRex/l-rex-server) [![codecov](https://codecov.io/gh/LoyaltyRex/l-rex-server/branch/master/graph/badge.svg)](https://codecov.io/gh/LoyaltyRex/l-rex-server)
+ [![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/groups/LoyaltyRex/locations/l-rex-server/public/results/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/groups/LoyaltyRex/locations/l-rex-server/public/results/branches/master)
 
 The server-side component of LoyaltyRex.
 
