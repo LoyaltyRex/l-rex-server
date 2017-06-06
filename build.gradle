@@ -8,9 +8,11 @@ buildscript {
     }
     dependencies {
         classpath 'com.netflix.nebula:nebula-dependency-recommender:3.6.3'
-        classpath 'com.blackducksoftware.integration:hub-gradle-plugin:3.4.1'
+        classpath 'com.blackducksoftware.integration:hub-gradle-plugin:5.0.0'
     }
 }
+
+apply plugin: 'com.blackducksoftware.hub'
 
 allprojects{
     apply plugin: 'java'
@@ -28,4 +30,8 @@ allprojects{
 
 task wrapper(type: Wrapper) {
     gradleVersion = "${gradleVersion}"
+}
+
+buildBom{
+	deployHubBdio false
 }
