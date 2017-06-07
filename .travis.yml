@@ -13,8 +13,8 @@ before_install:
   - pip install --user codecov
 
 before_script:
-  - psql -c 'create user lrex with password loyalty;' -U postgres
-  - psql -c 'create database lrex-server;' -U lrex
+  - psql -c "create user lrex with password 'loyalty';" -U postgres
+  - psql -c "create database lrex-server;" -U lrex
   - ./gradlew :repository.pg:flywayMigrate
 
 script:
