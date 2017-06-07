@@ -39,11 +39,9 @@ public interface IBusinessRepository {
      * 
      * @param business
      *            The business object to delete
-     * @throws DatabaseOperationFailedException
-     *             If there were no rows found to delete
      * @since 0.1.0
      */
-    void delete(Business business) throws DatabaseOperationFailedException;
+    void delete(Business business);
 
     /**
      * Saves a business into the data store. The data storage entry will be created if it does not exist, and updated if

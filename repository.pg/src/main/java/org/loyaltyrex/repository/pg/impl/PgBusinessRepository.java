@@ -59,12 +59,9 @@ public class PgBusinessRepository implements IBusinessRepository {
     }
 
     @Override
-    public void delete(Business business) throws DatabaseOperationFailedException {
+    public void delete(Business business) {
         Map<String, Object> queryArguments = Collections.singletonMap("id", business.getId());
-        int rowsDeleted = jdbcTemplate.update(QUERY_DELETE_SINGLE_BUSINESS, queryArguments);
-        if (rowsDeleted == 0) {
-            throw new DatabaseOperationFailedException("No rows were found to delete");
-        }
+        jdbcTemplate.update(QUERY_DELETE_SINGLE_BUSINESS, queryArguments);
     }
 
     @Override

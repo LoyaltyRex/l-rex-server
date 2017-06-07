@@ -47,13 +47,6 @@ public class PgBusinessRepositoryIntegrationTest extends PgRepositoryBaseTest {
         }
     }
 
-    @Test(expectedExceptions = DatabaseOperationFailedException.class)
-    public void deleteNonexistant() throws DatabaseOperationFailedException {
-        Business business = Business.getBuilder().id(UUID.randomUUID()).name("fake business").build();
-        businessRepo.delete(business);
-        Assert.fail("Should have thrown exception deleting nonexistant row");
-    }
-
     @Test
     public void saveFindSaveDelete() throws DatabaseOperationFailedException {
         UUID id = UUID.randomUUID();
