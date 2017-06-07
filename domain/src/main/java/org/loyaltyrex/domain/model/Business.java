@@ -19,13 +19,13 @@ import java.util.UUID;
  * @author nickavv
  * @since 0.1.0
  */
-public class Business {
+public final class Business {
 
-    private UUID id;
+    private final UUID id;
 	
-	private String name;
+    private final String name;
 	
-    public Business(UUID id, String name) {
+    private Business(UUID id, String name) {
 		this.id = Objects.requireNonNull(id);
 		this.name = Objects.requireNonNull(name);
 	}
@@ -73,6 +73,34 @@ public class Business {
         return result;
 	}
 	
+    public static Builder getBuilder() {
+        return new Builder();
+    }
 	
+    public static class Builder {
+
+        private UUID id;
+
+        private String name;
+
+        private Builder() {
+            // No instantiating builders. Clients should use Business.getBuilder() to get an instance
+        }
+
+        public Builder id(UUID id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Business build() {
+            return new Business(id, name);
+        }
+
+    }
 	
 }

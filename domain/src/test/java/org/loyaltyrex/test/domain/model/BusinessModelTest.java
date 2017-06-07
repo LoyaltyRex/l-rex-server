@@ -15,62 +15,69 @@ import org.testng.annotations.Test;
  */
 public class BusinessModelTest {
 
+    private UUID testId1 = UUID.randomUUID();
+
+    private Business testBusiness = Business.getBuilder().id(testId1).name("test business").build();
+
     @Test
     public void constructTest() {
-        UUID testId = UUID.randomUUID();
-        Business business = new Business(testId, "test business");
-        Assert.assertEquals(business.getId(), testId);
-        Assert.assertEquals(business.getName(), "test business");
+        Assert.assertEquals(testBusiness.getId(), testId1);
+        Assert.assertEquals(testBusiness.getName(), "test business");
     }
 
     @Test(expectedExceptions = NullPointerException.class)
-    public void constructNullIdTest() {
-        new Business(null, "test business");
-        Assert.fail("Constructing with null ID should have thrown an exception");
+    public void buildMissingIdTest() {
+        Business.getBuilder().name("test business").build();
+        Assert.fail("Building without ID should have thrown an exception");
     }
 
     @Test(expectedExceptions = NullPointerException.class)
-    public void constructNullNameTest() {
-        new Business(UUID.randomUUID(), null);
-        Assert.fail("Constructing with null name should have thrown an exception");
+    public void buildMissingNameTest() {
+        Business.getBuilder().id(UUID.randomUUID()).build();
+        Assert.fail("Building without name should have thrown an exception");
     }
 
     @Test
     public void toStringTest() {
-        Business business = new Business(UUID.randomUUID(), "test business");
-        Assert.assertEquals(business.toString(), "Business[name=test business]");
+        Assert.assertEquals(testBusiness.toString(), "Business[name=test business]");
     }
 
     @Test
     public void equalsTest() {
         UUID testId = UUID.randomUUID();
-        Business business = new Business(testId, "test business");
-        Business business2 = new Business(testId, "test business");
+        Business business = Business.getBuilder()
+                .id(testId)
+                .name("test business")
+                .build();
+        Business business2 = Business.getBuilder()
+                .id(testId)
+                .name("test business")
+                .build();
         Assert.assertEquals(business, business2);
     }
 
     @Test
     public void idsNotEqualsTest() {
-        UUID testId = UUID.randomUUID();
         UUID testId2 = UUID.randomUUID();
-        Business business = new Business(testId, "test business");
-        Business business2 = new Business(testId2, "test business");
-        Assert.assertNotEquals(business, business2);
+        Business business2 = Business.getBuilder()
+                .id(testId2)
+                .name("test business")
+                .build();
+        Assert.assertNotEquals(testBusiness, business2);
     }
 
     @Test
     public void namesNotEqualsTest() {
-        UUID testId = UUID.randomUUID();
-        Business business = new Business(testId, "test business");
-        Business business2 = new Business(testId, "test business 2");
-        Assert.assertNotEquals(business, business2);
+        Business business2 = Business.getBuilder()
+                .id(testId1)
+                .name("test business 2")
+                .build();
+        Assert.assertNotEquals(testBusiness, business2);
     }
 
     @Test
     public void hashCodeTest() {
-        UUID testId = UUID.randomUUID();
-        Business business = new Business(testId, "test business");
-        Assert.assertEquals(business.hashCode(), Objects.hash(testId, "test business"));
+        Assert.assertEquals(testBusiness.hashCode(), Objects.hash(testId1, "test business"));
     }
 
 }

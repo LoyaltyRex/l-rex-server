@@ -9,6 +9,7 @@
 	
 	"org.springframework:spring-context": { "locked" : "4.3.7.RELEASE" },
 	"org.springframework:spring-jdbc": { "locked" : "4.3.7.RELEASE" },
+	"org.springframework:spring-test": { "locked" : "4.3.7.RELEASE" },
 	
 	"org.postgresql:postgresql": { "locked" : "42.0.0" },
 	

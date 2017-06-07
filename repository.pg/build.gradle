@@ -18,4 +18,5 @@ dependencies {
 
 	// Test dependencies
     testCompile group: 'org.testng', name: 'testng'
+    testCompile group: 'org.springframework', name: 'spring-test'
 }

@@ -13,6 +13,7 @@ package org.loyaltyrex.domain.repository.api;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.loyaltyrex.domain.exception.DatabaseOperationFailedException;
 import org.loyaltyrex.domain.model.Business;
 
 /**
@@ -26,11 +27,34 @@ public interface IBusinessRepository {
     /**
      * Find a Business in the data store by its ID.
      * 
-     * @param id
+     * @param uuid
      *            The unique identifier of the Business to retrieve
      * @return An Optional containing the Business requested, or Optional.empty() if none was found
      * @since 0.1.0
      */
-    Optional<Business> find(UUID id);
+    Optional<Business> find(UUID uuid);
+
+    /**
+     * Deletes a business from the data store
+     * 
+     * @param business
+     *            The business object to delete
+     * @throws DatabaseOperationFailedException
+     *             If there were no rows found to delete
+     * @since 0.1.0
+     */
+    void delete(Business business) throws DatabaseOperationFailedException;
+
+    /**
+     * Saves a business into the data store. The data storage entry will be created if it does not exist, and updated if
+     * it does.
+     * 
+     * @param business
+     *            The business object to save
+     * @throws DatabaseOperationFailedException
+     *             If the result of the operation did not affect exactly one row
+     * @since 0.1.0
+     */
+    void save(Business business) throws DatabaseOperationFailedException;
 
 }
