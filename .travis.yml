@@ -14,7 +14,7 @@ before_install:
 
 before_script:
   - psql -c "create user lrex with password 'loyalty';" -U postgres
-  - psql -c "create database lrex-server;" -U lrex
+  - createdb lrex-server -O lrex
   - ./gradlew :repository.pg:flywayMigrate
 
 script:
