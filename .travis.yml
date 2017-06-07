@@ -2,9 +2,20 @@ language: java
 
 jdk:
   - oraclejdk8
+  
+addons:
+  postgresql: "9.4"
+
+services:
+  - postgresql
 
 before_install:
   - pip install --user codecov
+
+before_script:
+  - psql -c 'create user lrex with password loyalty;' -U postgres
+  - psql -c 'create database lrex-server;' -U lrex
+  - ./gradlew :repository.pg:flywayMigrate
 
 script:
   - ./gradlew codeCoverageReport
