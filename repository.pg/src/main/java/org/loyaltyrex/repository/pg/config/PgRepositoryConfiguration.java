@@ -1,7 +1,7 @@
 package org.loyaltyrex.repository.pg.config;
 
 import java.io.IOException;
-import java.nio.file.Paths;
+import java.nio.file.FileSystems;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.bouncycastle.crypto.InvalidCipherTextException;
@@ -28,13 +28,14 @@ public class PgRepositoryConfiguration {
             @Value("${repository.pg.credentialsPath}") String credentialsPath,
             @Value("${lockdown.privateKeyPath}") String privateKeyPath) throws InvalidCipherTextException, IOException {
         BasicDataSource dataSource = new BasicDataSource();
-        CredentialStore pgCredentials = CredentialStore.load(Paths.get(credentialsPath));
+        CredentialStore pgCredentials = CredentialStore.load(FileSystems.getDefault().getPath(credentialsPath));
 
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl(jdbcUrl);
         dataSource.setMaxIdle(maxPoolSize);
         dataSource.setMaxTotal(maxPoolSize);
-        pgCredentials.accessCredentials(jdbcUrl, Paths.get(privateKeyPath), (username, password) -> {
+        pgCredentials.accessCredentials(jdbcUrl, FileSystems.getDefault().getPath(privateKeyPath),
+                (username, password) -> {
             dataSource.setUsername(username);
             dataSource.setPassword(new String(password));
         });
