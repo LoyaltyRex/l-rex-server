@@ -3,7 +3,7 @@ package org.loyaltyrex.test.domain.model;
 import java.util.Objects;
 import java.util.UUID;
 
-import org.loyaltyrex.domain.model.Business;
+import org.loyaltyrex.server.domain.model.Business;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

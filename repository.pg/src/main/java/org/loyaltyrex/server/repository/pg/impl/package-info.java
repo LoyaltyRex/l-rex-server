@@ -8,13 +8,13 @@
  * Contributors:
  *    nickavv - initial API and implementation and/or initial documentation
  */
-@ParametersAreNonnullByDefault
-package org.loyaltyrex.domain.repository.api;
-
 /**
- * This package contains interfaces to retrieve domain level objects from a data store
+ * This package contains implementations of a repository layer to retrieve objects from a PostgreSQL data store
  * 
- * @since 0.1.0
  * @author nickavv
+ * @since 0.1.0
  */
+@ParametersAreNonnullByDefault
+package org.loyaltyrex.server.repository.pg.impl;
+
 import javax.annotation.ParametersAreNonnullByDefault;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Jun 6, 2017 Loyalty Rex.
+ * Copyright (c) Apr 10, 2017 Loyalty Rex.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Apache License Version 2.0
  * which accompanies this distribution, and is available at
@@ -8,13 +8,13 @@
  * Contributors:
  *    nickavv - initial API and implementation and/or initial documentation
  */
-/**
- * Repository tests
- * 
- * @author nickavv
- * @since 0.1.0
- */
 @ParametersAreNonnullByDefault
-package org.loyaltyrex.test.repository;
+package org.loyaltyrex.server.domain.repository.api;
 
+/**
+ * This package contains interfaces to retrieve domain level objects from a data store
+ * 
+ * @since 0.1.0
+ * @author nickavv
+ */
 import javax.annotation.ParametersAreNonnullByDefault;

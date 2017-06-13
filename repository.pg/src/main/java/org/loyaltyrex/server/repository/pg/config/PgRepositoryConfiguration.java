@@ -1,12 +1,12 @@
-package org.loyaltyrex.repository.pg.config;
+package org.loyaltyrex.server.repository.pg.config;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.bouncycastle.crypto.InvalidCipherTextException;
-import org.loyaltyrex.domain.repository.api.IBusinessRepository;
-import org.loyaltyrex.repository.pg.impl.PgBusinessRepository;
+import org.loyaltyrex.server.domain.repository.api.IBusinessRepository;
+import org.loyaltyrex.server.repository.pg.impl.PgBusinessRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

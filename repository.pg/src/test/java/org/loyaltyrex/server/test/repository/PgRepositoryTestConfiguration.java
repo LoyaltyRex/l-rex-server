@@ -1,6 +1,6 @@
-package org.loyaltyrex.test.repository;
+package org.loyaltyrex.server.test.repository;
 
-import org.loyaltyrex.repository.pg.config.PgRepositoryConfiguration;
+import org.loyaltyrex.server.repository.pg.config.PgRepositoryConfiguration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;

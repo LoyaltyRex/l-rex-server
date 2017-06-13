@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Jun 5, 2017 Loyalty Rex.
+ * Copyright (c) Jun 6, 2017 Loyalty Rex.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Apache License Version 2.0
  * which accompanies this distribution, and is available at
@@ -9,12 +9,12 @@
  *    nickavv - initial API and implementation and/or initial documentation
  */
 /**
- * Contains configuration for the PostgreSQL repository implementations
+ * Repository tests
  * 
  * @author nickavv
  * @since 0.1.0
  */
 @ParametersAreNonnullByDefault
-package org.loyaltyrex.repository.pg.config;
+package org.loyaltyrex.server.test.repository;
 
 import javax.annotation.ParametersAreNonnullByDefault;

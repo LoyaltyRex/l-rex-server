@@ -1,4 +1,4 @@
-package org.loyaltyrex.test.repository;
+package org.loyaltyrex.server.test.repository;
 
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;

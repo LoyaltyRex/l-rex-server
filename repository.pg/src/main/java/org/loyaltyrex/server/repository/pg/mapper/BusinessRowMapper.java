@@ -1,10 +1,10 @@
-package org.loyaltyrex.repository.pg.mapper;
+package org.loyaltyrex.server.repository.pg.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
 
-import org.loyaltyrex.domain.model.Business;
+import org.loyaltyrex.server.domain.model.Business;
 import org.springframework.jdbc.core.RowMapper;
 
 /**

@@ -9,12 +9,12 @@
  *    nickavv - initial API and implementation and/or initial documentation
  */
 /**
- * Row-mappers for converting database query results into domain objects
+ * PostgreSQL repository tests
  * 
  * @author nickavv
  * @since 0.1.0
  */
 @ParametersAreNonnullByDefault
-package org.loyaltyrex.repository.pg.mapper;
+package org.loyaltyrex.server.test.repository.pg;
 
 import javax.annotation.ParametersAreNonnullByDefault;

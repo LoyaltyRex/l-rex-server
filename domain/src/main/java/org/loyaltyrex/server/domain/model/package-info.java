@@ -6,7 +6,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  */
 @ParametersAreNonnullByDefault
-package org.loyaltyrex.domain.model;
+package org.loyaltyrex.server.domain.model;
 
 /**
  * This package contains domain-level representations of application objects

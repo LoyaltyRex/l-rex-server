@@ -8,7 +8,7 @@
  * Contributors:
  *    nickavv - initial API and implementation and/or initial documentation
  */
-package org.loyaltyrex.domain.model;
+package org.loyaltyrex.server.domain.model;
 
 import java.util.Objects;
 import java.util.UUID;

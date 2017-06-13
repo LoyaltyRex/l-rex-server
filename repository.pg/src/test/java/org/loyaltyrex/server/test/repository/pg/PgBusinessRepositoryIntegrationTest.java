@@ -1,13 +1,13 @@
-package org.loyaltyrex.test.repository.pg;
+package org.loyaltyrex.server.test.repository.pg;
 
 import java.util.Optional;
 import java.util.UUID;
 
 import javax.inject.Inject;
 
-import org.loyaltyrex.domain.model.Business;
-import org.loyaltyrex.domain.repository.api.IBusinessRepository;
-import org.loyaltyrex.test.repository.PgRepositoryBaseTest;
+import org.loyaltyrex.server.domain.model.Business;
+import org.loyaltyrex.server.domain.repository.api.IBusinessRepository;
+import org.loyaltyrex.server.test.repository.PgRepositoryBaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

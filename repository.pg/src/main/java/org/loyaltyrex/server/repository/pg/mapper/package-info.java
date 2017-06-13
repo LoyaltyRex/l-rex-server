@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Apr 10, 2017 Loyalty Rex.
+ * Copyright (c) Jun 6, 2017 Loyalty Rex.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Apache License Version 2.0
  * which accompanies this distribution, and is available at
@@ -9,12 +9,12 @@
  *    nickavv - initial API and implementation and/or initial documentation
  */
 /**
- * This package contains implementations of a repository layer to retrieve objects from a PostgreSQL data store
+ * Row-mappers for converting database query results into domain objects
  * 
  * @author nickavv
  * @since 0.1.0
  */
 @ParametersAreNonnullByDefault
-package org.loyaltyrex.repository.pg.impl;
+package org.loyaltyrex.server.repository.pg.mapper;
 
 import javax.annotation.ParametersAreNonnullByDefault;

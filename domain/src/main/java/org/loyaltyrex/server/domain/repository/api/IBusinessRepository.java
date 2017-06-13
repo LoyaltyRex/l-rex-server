@@ -8,12 +8,12 @@
  * Contributors:
  *    nickavv - initial API and implementation and/or initial documentation
  */
-package org.loyaltyrex.domain.repository.api;
+package org.loyaltyrex.server.domain.repository.api;
 
 import java.util.Optional;
 import java.util.UUID;
 
-import org.loyaltyrex.domain.model.Business;
+import org.loyaltyrex.server.domain.model.Business;
 
 /**
  * An interface for retrieving Business objects from a data store

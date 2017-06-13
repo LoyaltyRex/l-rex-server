@@ -8,7 +8,7 @@
  * Contributors:
  *    nickavv - initial API and implementation and/or initial documentation
  */
-package org.loyaltyrex.repository.pg.impl;
+package org.loyaltyrex.server.repository.pg.impl;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,9 +19,9 @@ import java.util.UUID;
 import javax.inject.Inject;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.loyaltyrex.domain.model.Business;
-import org.loyaltyrex.domain.repository.api.IBusinessRepository;
-import org.loyaltyrex.repository.pg.mapper.BusinessRowMapper;
+import org.loyaltyrex.server.domain.model.Business;
+import org.loyaltyrex.server.domain.repository.api.IBusinessRepository;
+import org.loyaltyrex.server.repository.pg.mapper.BusinessRowMapper;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
