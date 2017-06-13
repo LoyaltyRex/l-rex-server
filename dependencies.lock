@@ -11,6 +11,9 @@
 	"org.springframework:spring-jdbc": { "locked" : "4.3.7.RELEASE" },
 	"org.springframework:spring-test": { "locked" : "4.3.7.RELEASE" },
 	
+	"org.springframework.boot:spring-boot-autoconfigure": { "locked" : "1.5.4.RELEASE" },
+	"org.springframework.boot:spring-boot-starter-web": { "locked" : "1.5.4.RELEASE" },
+	
 	"org.postgresql:postgresql": { "locked" : "42.0.0" },
 	
 	"org.testng:testng": { "locked": "6.9.10" }

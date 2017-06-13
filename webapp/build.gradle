@@ -1,0 +1,28 @@
+apply plugin: 'application'
+
+mainClassName='org.loyaltyrex.server.webapp.LoyaltyRexServer'
+applicationDefaultJvmArgs = [ "-Xdebug", "-agentlib:jdwp=transport=dt_socket,address=9000,server=y,suspend=n" ]
+
+//Dependency versions managed in $rootDir/dependencies.lock
+dependencies {
+	// Compile dependencies
+	compile project(':domain')
+	compile project(':repository.pg')
+	compile group: 'com.google.code.findbugs', name: 'jsr305'
+	compile group: 'org.springframework', name: 'spring-context'
+	compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure'
+	
+	// Runtime dependencies
+	runtime group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+
+	// Test dependencies
+    testCompile group: 'org.testng', name: 'testng'
+}
+
+run {
+    args "--spring.config.location=file:///${projectDir}/src/test/resources/overrides.properties"
+    
+	// Remove the "built" UI resources and use the sources instead, allowing viewing of changes without a restart
+	classpath += files(sourceSets.main.resources.srcDirs)
+	classpath -= files(sourceSets.main.output.resourcesDir)
+}
