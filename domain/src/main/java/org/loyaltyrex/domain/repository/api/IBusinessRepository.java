@@ -13,7 +13,6 @@ package org.loyaltyrex.domain.repository.api;
 import java.util.Optional;
 import java.util.UUID;
 
-import org.loyaltyrex.domain.exception.DatabaseOperationFailedException;
 import org.loyaltyrex.domain.model.Business;
 
 /**
@@ -49,10 +48,8 @@ public interface IBusinessRepository {
      * 
      * @param business
      *            The business object to save
-     * @throws DatabaseOperationFailedException
-     *             If the result of the operation did not affect exactly one row
      * @since 0.1.0
      */
-    void save(Business business) throws DatabaseOperationFailedException;
+    void save(Business business);
 
 }

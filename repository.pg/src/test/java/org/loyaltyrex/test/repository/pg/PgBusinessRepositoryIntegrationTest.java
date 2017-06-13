@@ -5,7 +5,6 @@ import java.util.UUID;
 
 import javax.inject.Inject;
 
-import org.loyaltyrex.domain.exception.DatabaseOperationFailedException;
 import org.loyaltyrex.domain.model.Business;
 import org.loyaltyrex.domain.repository.api.IBusinessRepository;
 import org.loyaltyrex.test.repository.PgRepositoryBaseTest;
@@ -25,7 +24,7 @@ public class PgBusinessRepositoryIntegrationTest extends PgRepositoryBaseTest {
     }
     
     @Test
-    public void saveFindDelete() throws DatabaseOperationFailedException {
+    public void saveFindDelete() {
         UUID id = UUID.randomUUID();
         String name = "test business";
         Business business = Business.getBuilder().id(id).name(name).build();
@@ -48,7 +47,7 @@ public class PgBusinessRepositoryIntegrationTest extends PgRepositoryBaseTest {
     }
 
     @Test
-    public void saveFindSaveDelete() throws DatabaseOperationFailedException {
+    public void saveFindSaveDelete() {
         UUID id = UUID.randomUUID();
         Business business = Business.getBuilder().id(id).name("test business").build();
 

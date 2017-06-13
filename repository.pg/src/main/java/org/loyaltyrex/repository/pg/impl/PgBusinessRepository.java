@@ -19,7 +19,6 @@ import java.util.UUID;
 import javax.inject.Inject;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.loyaltyrex.domain.exception.DatabaseOperationFailedException;
 import org.loyaltyrex.domain.model.Business;
 import org.loyaltyrex.domain.repository.api.IBusinessRepository;
 import org.loyaltyrex.repository.pg.mapper.BusinessRowMapper;
@@ -65,7 +64,7 @@ public class PgBusinessRepository implements IBusinessRepository {
     }
 
     @Override
-    public void save(Business business) throws DatabaseOperationFailedException {
+    public void save(Business business) {
         @SuppressWarnings("serial")
         Map<String, Object> queryArguments = new HashMap<String, Object>() {
             {
@@ -73,11 +72,7 @@ public class PgBusinessRepository implements IBusinessRepository {
                 put("name", business.getName());
             }
         };
-        int rowsAffected = jdbcTemplate.update(QUERY_SAVE_SINGLE_BUSINESS, queryArguments);
-        if (rowsAffected != 1) {
-            throw new DatabaseOperationFailedException(
-                    "Failed to save business, expected exactly 1 row to be affected");
-        }
+        jdbcTemplate.update(QUERY_SAVE_SINGLE_BUSINESS, queryArguments);
     }
 
 }
