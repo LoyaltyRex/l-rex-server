@@ -1,0 +1,32 @@
+plugins {
+    id "org.flywaydb.flyway" version "4.2.0"
+}
+
+flyway {
+	url = 'jdbc:postgresql://127.0.0.1/lrex-server'
+    user = 'lrex'
+    password = 'loyalty'
+}
+
+//Dependency versions managed in $rootDir/dependencies.lock
+dependencies {
+	// Compile dependencies
+	compile project(':core.domain')
+	
+	compile group: 'com.coronaide.lockdown', name: 'lockdown-core'
+	
+	compile group: 'com.google.code.findbugs', name: 'jsr305'
+	
+	compile group: 'javax.inject', name: 'javax.inject'
+	
+	compile group: 'org.apache.commons', name: 'commons-dbcp2'
+	
+	compile group: 'org.springframework', name: 'spring-context'
+	compile group: 'org.springframework', name: 'spring-jdbc'
+	
+	compile group: 'org.postgresql', name: 'postgresql'
+
+	// Test dependencies
+    testCompile group: 'org.testng', name: 'testng'
+    testCompile group: 'org.springframework', name: 'spring-test'
+}

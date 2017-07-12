@@ -1,3 +1,4 @@
-include 'domain'
-include 'repository.pg'
-include 'webapp'
+include 'core.domain'
+include 'core.persistence'
+include 'main.webapp'
+include 'core.rest'

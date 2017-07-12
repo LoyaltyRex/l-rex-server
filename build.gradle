@@ -9,10 +9,12 @@ buildscript {
     dependencies {
         classpath 'com.netflix.nebula:nebula-dependency-recommender:3.6.3'
         classpath 'com.blackducksoftware.integration:hub-gradle-plugin:5.0.0'
+        classpath group: 'org.starchartlabs.flare', name: 'flare-operations-plugins', version: '0.1.0'
     }
 }
 
 apply plugin: 'com.blackducksoftware.hub'
+apply plugin: 'org.starchartlabs.flare.merge-coverage-reports'
 
 allprojects{
     apply plugin: 'java'
@@ -30,24 +32,10 @@ allprojects{
 }
 
 subprojects {
+  apply plugin: 'org.starchartlabs.flare.increase-test-logging'
+  
   //Setup default test behavior, including failure logging
   test {
-      testLogging {
-          exceptionFormat 'full'
-
-          quiet {
-              events 'failed'
-          }
-
-          info {
-              events 'skipped', 'failed', 'passed'
-          }
-
-          debug {
-              events 'started', 'standard_out', 'standard_error', 'skipped', 'failed', 'passed'
-          }
-      }
-
       useTestNG() {
           useDefaultListeners = true
       }
@@ -60,24 +48,4 @@ task wrapper(type: Wrapper) {
 
 buildBom{
 	deployHubBdio false
-}
-
-//Create an aggregated jacoco report
-task codeCoverageReport(type: JacocoReport) {
-    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
-
-    subprojects.each {
-        sourceSets it.sourceSets.main
-    }
-
-    reports {
-        xml.enabled true
-        xml.destination "${buildDir}/reports/jacoco/report.xml"
-        html.enabled false
-        csv.enabled false
-    }
-}
-
-codeCoverageReport.dependsOn {
-    subprojects*.test
 }
