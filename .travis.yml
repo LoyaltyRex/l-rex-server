@@ -20,7 +20,7 @@ before_script:
   - ./gradlew :core.persistence:flywayMigrate
 
 script:
-  - ./gradlew codeCoverageReport
+  - ./gradlew mergeCoverageReports
 
 after_success:
   - codecov
